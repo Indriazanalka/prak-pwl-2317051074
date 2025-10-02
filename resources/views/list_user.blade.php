@@ -1,26 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Daftar Pengguna</h1>
+<div class="container mx-auto px-6 py-6">
+    <h1 class="text-2xl font-bold mb-6 text-gray-800">Daftar User</h1>
 
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Kelas</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->nama }}</td>
-                    <td>{{ $user->nim }}</td>
-                    <td>{{ $user->nama_kelas }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    @include('components.user-table', ['users' => $users])
+</div>
 @endsection

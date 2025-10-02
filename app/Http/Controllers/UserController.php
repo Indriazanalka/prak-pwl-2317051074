@@ -17,41 +17,30 @@ class UserController extends Controller
         $this->kelasModel = new Kelas();
     }
 
-    // Halaman list user
-    public function index()
-    {
-        $users = $this->userModel->getUser();
-
-        $data = [
-            'title' => 'Daftar User',
-            'users' => $users,
-        ];
-
-        return view('list_user', $data);
-    }
-
-    // Form create user
-    public function create()
-    {
-        $kelas = $this->kelasModel->getKelas();
-
+    public function create(){
+        $kelasModel = new Kelas();
+        $kelas = $kelasModel->getKelas();
         $data = [
             'title' => 'Create User',
             'kelas' => $kelas,
         ];
-
         return view('create_user', $data);
     }
 
-    // Simpan user baru
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $this->userModel->create([
-            'nama' => $request->nama,
-            'nim' => $request->npm,       // mapping dari form field "npm" ke kolom "nim"
-            'kelas_id' => $request->kelas_id,
+            'nama' => $request->input('nama'),
+            'nim' => $request->input('nim'),
+            'kelas_id' => $request->input('kelas_id'),
         ]);
+        return redirect()->to('/user');
+    }
 
-        return redirect()->route('user.index');
+    public function index(){
+        $data = [
+            'title' => 'List User',
+            'users' => $this->userModel->getUser(),
+        ];
+        return view('list_user', $data);
     }
 }
