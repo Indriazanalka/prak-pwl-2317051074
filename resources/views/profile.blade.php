@@ -13,7 +13,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background: linear-gradient(135deg, #1f1f1fff, #707070ff, #bbbbbbff);
+      background: linear-gradient(135deg, #325c79ff, #0096c4ff, #00a6ffff);
       background-size: 300% 300%;
       animation: gradientBG 8s ease infinite;
     }
