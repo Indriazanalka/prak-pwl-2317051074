@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto px-6 py-6">
-    <h1 class="text-2xl font-bold mb-6 text-gray-800">Daftar User</h1>
+<div class="text-center mb-5">
+    <h1 class="fw-bold text-white mb-2">Daftar Mahasiswa</h1>
+    <p class="text-light opacity-75">Kelola data mahasiswa dengan mudah dan cepat</p>
+</div>
 
+<div class="card p-4">
+    <div class="d-flex justify-content-between mb-3">
+        <a href="{{ route('user.create') }}" class="btn btn-primary rounded-pill">Tambah Mahasiswa</a>
+    </div>
     @include('components.user-table', ['users' => $users])
 </div>
 @endsection
