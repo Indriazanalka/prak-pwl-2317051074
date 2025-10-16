@@ -1,3 +1,3 @@
-<footer class="bg-info text-white text-center py-3 mt-auto">
-    <p>© 2025 Indriazan Alkautsar</p>
+<footer class="text-center mt-auto" class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #6f42c1 !important;">
+    <p class="mb-0">© 2025 Laravel. All rights reserved.</p>
 </footer>
